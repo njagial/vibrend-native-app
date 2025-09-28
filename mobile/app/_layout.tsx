@@ -1,10 +1,11 @@
 import { ClerkProvider } from '@clerk/clerk-expo'
-import { tokenCache } from '@clerk/clerk-expo/token-cache'
+import  TokenCache from '@clerk/clerk-expo'
 import { Slot } from 'expo-router'
+import * as React from 'react'
 
 export default function RootLayout() {
   return (
-    <ClerkProvider tokenCache={tokenCache}>
+    <ClerkProvider tokenCache={TokenCache}>
       <Slot />
     </ClerkProvider>
   )

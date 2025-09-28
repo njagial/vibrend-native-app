@@ -5,6 +5,9 @@
     "strict": true,
     "module": "ESNext",
     "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+    "allowJs": true,
+    "skipLibCheck": true,
     "paths": {
       "@/*": [
         "./*"

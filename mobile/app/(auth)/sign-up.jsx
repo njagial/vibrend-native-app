@@ -20,7 +20,15 @@ export default function SignUpScreen() {
 
   // Handle submission of sign-up form
   const onSignUpPress = async () => {
-    if (!isLoaded) return
+    if (!isLoaded) {
+      return
+    }
+
+    // client-side validation
+    if (!emailAddress || !password) {
+      setError('Please fill in all fields.');
+      return;
+    }
 
     // Start sign-up process using email and password provided
     try {
@@ -47,7 +55,14 @@ export default function SignUpScreen() {
 
   // Handle submission of verification form
   const onVerifyPress = async () => {
-    if (!isLoaded) return
+    if (!isLoaded) {
+      return;
+    }
+
+    if (!code) {
+      setError('Please enter the verification code we emailed you.');
+      return;
+    }
 
     try {
       // Use the code the user provided to attempt verification

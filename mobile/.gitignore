@@ -8,6 +8,8 @@ node_modules/
 dist/
 web-build/
 expo-env.d.ts
+.expo-shared/
+
 
 # Native
 .kotlin/
@@ -37,3 +39,4 @@ yarn-error.*
 *.tsbuildinfo
 
 app-example
+
