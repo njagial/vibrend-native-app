@@ -3,6 +3,9 @@ import mongoose from "mongoose";
 import Destinations from "./models/destinations.model.js";
 import destinationsRoute from "./routes/destinations.route.js";
 import paymentRoutes from "./routes/payment.route.js";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 
 
@@ -28,12 +31,12 @@ app.get("/", (req, res) => {
 
 mongoose
   .connect(
-    "mongodb+srv://njagiidev:fMhQiUGX7ZV2WuDX@cluster0.y0ojaky.mongodb.net/Destinations?retryWrites=true&w=majority&appName=Cluster0"
+    process.env.MongoDB_URI
   )
   .then(() => {
     console.log("Connected to MongoDB");
-    app.listen(3000, () => {
-      console.log("Server is running on port 3000");
+    app.listen(PORT, () => {
+      console.log("Server is running on port " + PORT);
     });
   })
   .catch((err) => {
